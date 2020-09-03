@@ -28,6 +28,8 @@ dependencies {
 	runtimeOnly 'com.h2database:h2'
 	//runtimeOnly 'mysql:mysql-connector-java'
 	
+	implementation ('nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect')
+	
 	// https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 	

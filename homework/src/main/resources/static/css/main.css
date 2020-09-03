@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+html{
+	width:100%;
+	height:100%;
+}
+body{
+	height:100%;
+	width:100%;
+	background-color: #fbf7f6;
+}
+nav>a.navbar-brand{
+	font-size: 40px;
+}
+
+.content{
+	width:100%;
+	height:80%;
+}
+footer{
+	width:100%;
+	height:15%;
+	border-top :1px solid #d5d5d5;
+}
+.footer-content{
+	text-align: center;
+}
+.footer-content>h2{
+	margin-top : 1%;
+}
+
+#career_year{
+	width:200px;
+}
+.content-inner>h2{
+	/*float:left;*/
+	margin-right : 20px;
+	margin-bottom : 30px;
+}
+.career{
+	margin-top : 20px;
+}
+.content-inner{
+	padding: 30px;
+}
+.sel-title{
+	font-weight : 1000;
+}
+.sel-content{
+	margin-left: 20px;
+}
+.slide-img{
+	width:100%;
+}

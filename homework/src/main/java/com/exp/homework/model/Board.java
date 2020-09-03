@@ -19,9 +19,9 @@ public class Board {
 	private Long id;
 	@Column(length = 50)
 	private String name;
-	@Column(length = 50)
+	@Column(length = 50, nullable = false)
 	private String title;
-	@Column(length = 2000)
+	@Column(length = 2000, nullable = false)
 	private String contents;
 	@Column(length = 50)
 	private String post_pass;

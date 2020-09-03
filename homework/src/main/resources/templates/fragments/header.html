@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:fragment="headerFragment">
+    <meta charset="UTF-8" />
+    <!-- 공통으로 쓰이는 css파일을넣는다.-->
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" >
+    <link rel="stylesheet" href="/css/swiper/swiper-bundle.min.css">
+    
+    <title>title</title>
+    
+    <!-- 공용 script -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="/js/bootstrap/bootstrap.min.js"></script>
+	<script src="/js/swiper/swiper-bundle.min.js"></script>
+</head>
+
+</html>

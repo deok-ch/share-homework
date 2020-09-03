@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>hello</title>
-</head>
-<body>
-	hello!!!
-</body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
+
+    <!-- index.html 고유 CSS 추가 -->
+    <th:block layout:fragment="css">
+    	<link rel="stylesheet" th:href="@{/css/main.css}" >
+       
+    </th:block>
+    
+    <!-- index.html 고유 스크립트 추가 -->
+    <th:block layout:fragment="script">
+        <!-- script th:src="@{/js/page/home.js}"></script> -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+		<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+		<script type="text/javascript" src="js/import/import.js"></script>
+    </th:block>
+
+    <div layout:fragment="content" class="content">
+        <div>
+        
+        </div>
+    </div>
+    
+    
 </html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default">
+
+<!-- index.html 고유 CSS 추가 -->
+<th:block layout:fragment="css">
+
+</th:block>
+
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+	<!-- script th:src="@{/js/page/home.js}"></script> -->
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+	<script type="text/javascript" src="js/import/import.js"></script>
+</th:block>
+<div layout:fragment="content" class="content">
+	<div class="content-inner">
+		<table class="table"
+			style="width: 70%; margin-top: 10%; margin-left: 10%;">
+			<colgroup>
+				<col width="5%" />
+				<col width="45%" />
+				<col width="15%" />
+				<col width="10%" />
+				<col width="5%" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th>No.</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>등록일자</th>
+					<th>조회수</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="list: ${list}">
+					<td th:text="${list.id}"></td>
+					<td><a th:text="${list.title}" th:href="@{'/board/'+${list.id}}"></a></td>
+					<td th:text="${list.name}"></td>
+					<td th:text="${list.regdate}"></td>
+					<td th:text="${list.hit}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+</html>
