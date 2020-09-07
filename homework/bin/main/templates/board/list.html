@@ -20,34 +20,40 @@
 </th:block>
 <div layout:fragment="content" class="content">
 	<div class="content-inner">
-		<table class="table"
-			style="width: 70%; margin-top: 10%; margin-left: 10%;">
-			<colgroup>
-				<col width="5%" />
-				<col width="45%" />
-				<col width="15%" />
-				<col width="10%" />
-				<col width="5%" />
-			</colgroup>
-			<thead>
-				<tr>
-					<th>No.</th>
-					<th>제목</th>
-					<th>작성자</th>
-					<th>등록일자</th>
-					<th>조회수</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="list: ${list}">
-					<td th:text="${list.id}"></td>
-					<td><a th:text="${list.title}" th:href="@{'/board/'+${list.id}}"></a></td>
-					<td th:text="${list.name}"></td>
-					<td th:text="${list.regdate}"></td>
-					<td th:text="${list.hit}"></td>
-				</tr>
-			</tbody>
-		</table>
+		<div class="table">
+			<ul>
+				<li th:each="list: ${list}">
+					<div class="top_area">
+						<div class="write_num">
+						</div>
+						<div class="num_area">
+							<span class="table_date" ><strong th:text="${list.regdate}"></strong></span> 
+							<span class="table_hit" ><strong th:text="${list.hit}"></strong></span>
+							<!-- view: xml에서 properties이름 -->
+						</div>
+					</div>
+					<div class="subject">
+						<a th:text="${list.name}" th:href="@{'/board/'+${list.id}}"></a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="paging">
+			<ul>
+				<th:block th:each="page : ${#numbers.sequence(1,pagecnt)}">
+					<th:block th:if="${page.toString() == nowpage.toString()}">
+						<li class="active"><a th:text="${page}" th:href="@{'/board?page='+${page}}"></a></li>
+					</th:block>
+					<th:block th:unless="${page.toString() == nowpage.toString()}">
+						<li><a th:text="${page}" th:href="@{'/board?page='+${page}}"></a></li>
+					</th:block>
+				</th:block>
+				
+			</ul>
+		</div>
+		<div class="write">
+			<a href="board/create">글 쓰기</a>
+		</div>
 	</div>
 </div>
 
