@@ -12,10 +12,12 @@ body{
 nav>a.navbar-brand{
 	font-size: 40px;
 }
+ul{
+	list-style: none;
+}
 
 .content{
-	width:100%;
-	height:80%;
+
 }
 footer{
 	width:100%;
@@ -42,6 +44,14 @@ footer{
 }
 .content-inner{
 	padding: 30px;
+	text-align: center;
+}
+
+.content-inner > div{
+	border: solid 1px;
+}
+.content-inner > div > p > img{
+	width:100%;
 }
 .sel-title{
 	font-weight : 1000;

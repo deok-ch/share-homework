@@ -7,17 +7,16 @@
 <div layout:fragment="content" class="content">
 	<div class="content-inner">
 		<form action="/board/save" method="post" enctype="multipart/form-data" onsubmit="return postForm()">
+			<input type="hidden" th:value="*{board.id}" name="id">
 			<div class="form-group has-feedback">
 				<div>
-					<input type="text" name="title" placeholder="제목을 입력해 주세요." id="title">
+					<input type="text" name="title" placeholder="제목을 입력해 주세요." id="title" th:field="*{board.title}">
 				</div>
 			</div>
 			<div class="summernote">
-				<textarea id="summernote" rows="20"></textarea>
+				<textarea id="summernote" rows="20" >[[${board.contents}]]</textarea>
 			</div>
-			<input type="hidden" name="textType" value="HTML" id="textType">
-			<input type="file" name="upload" />
-			<button type="button" onclick="postForm22();">test</button>
+			<input type="file" name="upload" /><a th:href="*{board.filepath}" th:text="*{board.filepath}"></a>
 
 			<!-- <div class="recaptcha-wrapper">
 				<script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -62,7 +61,7 @@
 		          processData: false,
 		          success: function(url) {
 		            	$(el).summernote('editor.insertImage', url);
-		           		$('#imageBoard > ul').append('<li><img src="'+url+'" width="480" height="auto"/></li>');
+		           		//$('#imageBoard > ul').append('<li><img src="'+url+'" width="480" height="auto"/></li>');
 		          }
 		        });
 		      }

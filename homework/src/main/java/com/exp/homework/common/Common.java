@@ -34,7 +34,7 @@ public class Common {
 		
 		
 		String filePath = "/summernoteImage/" + format1.toString()+"."+filetype[1].toString();
-		files.transferTo(new File(filePath));
+		files.transferTo(new File(filePath)); //바로 업로드 하지말것.
 		return filePath;
 	}
 }

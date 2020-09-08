@@ -1,4 +1,4 @@
-package com.exp.homework.model;
+package com.exp.homework.board;
 
 import java.util.Date;
 
@@ -36,10 +36,12 @@ public class Board {
 	private String filepath;
 	
 	@Column(length = 50, nullable = false)
-	private String email;
+	private String writeid;
 	
 	
 	public Board() {
 		this.regdate = new Date();
+		this.hit = 0L;
 	}
+	
 }

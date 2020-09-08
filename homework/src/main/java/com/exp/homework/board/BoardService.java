@@ -1,4 +1,4 @@
-package com.exp.homework.service;
+package com.exp.homework.board;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.exp.homework.model.Board;
-import com.exp.homework.repository.BoardRepository;
+import com.exp.homework.board.Board;
+import com.exp.homework.board.BoardRepository;
 
 @Service
 public class BoardService {
@@ -24,7 +24,7 @@ public class BoardService {
 	public void save(Board board) {		//게시글 입력, 수정
 		repository.save(board);
 	}
-	@Transactional
+
 	public void delete(Long id) {		//게시글 삭제
 		repository.deleteById(id);
 	}
@@ -34,6 +34,4 @@ public class BoardService {
 	public Board getOne(Long id) {		//게시글 상세
 		return repository.getOne(id);
 	}
-
-	
 }

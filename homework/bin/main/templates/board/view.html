@@ -19,8 +19,13 @@
 
     <div layout:fragment="content" class="content">
         <div class="content-inner">
+        	<div class="myself">
+        		<th:block th:text="${board.name}"></th:block>
+        		<i class="fa fa-eye"><th:block th:text="${board.hit}"></th:block></i>
+        	</div>
         	<div class="title" th:text="${board.title}"></div>
-        	<div class="contents" th:text="${board.contents}"></div>
+        	<div class="contents"><th:block th:utext="${board.contents}"> </th:block></div>
+        	<div><a th:href="@{'/board/update/'+${board.id}}">수정</a></div>
         	<div><a th:href="@{'/board/delete/'+${board.id}}">삭제</a></div>
         </div>
     </div>

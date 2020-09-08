@@ -1,6 +1,8 @@
 package com.exp.homework.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Stack;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -13,11 +15,11 @@ import com.exp.homework.common.Common;
 
 @Controller
 public class FileController {
-
+	
+	
 	@PostMapping("/fileupload")
 	public @ResponseBody String fileupload(@RequestParam(name = "file") MultipartFile file) throws IOException{
 		String url = Common.fileuploads(file);
-		System.out.println(url);
 		return url;
 	}
 }
